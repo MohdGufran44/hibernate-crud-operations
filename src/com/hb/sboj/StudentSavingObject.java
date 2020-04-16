@@ -22,7 +22,7 @@ public class StudentSavingObject {
 		try {	
 			// create a student object
 			System.out.println("Creating new student object...");
-			Student tempStudent = new Student("Anas", "Raza", "raza@gmail.com");
+			Student tempStudent = new Student("Saba", "Naaz", "saba@gmail.com");
 			
 			// start a transaction
 			session.beginTransaction();

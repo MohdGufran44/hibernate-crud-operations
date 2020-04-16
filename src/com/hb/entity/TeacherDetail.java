@@ -23,7 +23,9 @@ public class TeacherDetail {
 	@Column(name="hobby")
 	private String hobby;
 	
-	@OneToOne(mappedBy = "teacherDetail", cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "teacherDetail", 
+			cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
+					CascadeType.REFRESH})
 	private Teacher teacher;
 	
 	
