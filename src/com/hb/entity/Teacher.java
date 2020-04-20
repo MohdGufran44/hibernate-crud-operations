@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,7 +37,7 @@ public class Teacher{
 	@JoinColumn(name="teacher_detail_id")
 	private TeacherDetail teacherDetail;
 	
-	@OneToMany(mappedBy = "teacher",
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "teacher",
 			cascade= { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	private List<Course> courses;
 
